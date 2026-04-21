@@ -1,0 +1,21 @@
+{
+  "name": "do-text-to-image-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Text to image app with DO Serverless Inference + Spaces",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1033.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}

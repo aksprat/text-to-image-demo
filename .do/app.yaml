@@ -1,0 +1,45 @@
+name: photosnap-ai
+region: sgp
+services:
+  - name: web
+    environment_slug: node-js
+    github:
+      branch: main
+      deploy_on_push: true
+      repo: your-github-user/your-repo
+    http_port: 3000
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    run_command: npm start
+    source_dir: /
+    envs:
+      - key: MODEL_ACCESS_KEY
+        scope: RUN_TIME
+        type: SECRET
+        value: ${MODEL_ACCESS_KEY}
+      - key: INFERENCE_ENDPOINT
+        scope: RUN_TIME
+        value: https://inference.do-ai.run/v1/async-invoke
+      - key: MODEL_ID
+        scope: RUN_TIME
+        value: fal-ai/fast-sdxl
+      - key: SPACES_ACCESS_KEY
+        scope: RUN_TIME
+        type: SECRET
+        value: ${SPACES_ACCESS_KEY}
+      - key: SPACES_SECRET_KEY
+        scope: RUN_TIME
+        type: SECRET
+        value: ${SPACES_SECRET_KEY}
+      - key: SPACES_BUCKET
+        scope: RUN_TIME
+        value: photosnap-bucket
+      - key: SPACES_REGION
+        scope: RUN_TIME
+        value: sgp1
+      - key: SPACES_FOLDER
+        scope: RUN_TIME
+        value: generated_images
+      - key: ALLOW_ORIGIN
+        scope: RUN_TIME
+        value: "*"
