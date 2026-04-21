@@ -1,4 +1,4 @@
-name: photosnap-ai
+name: text-to-image-demo
 region: sgp
 services:
   - name: web
@@ -6,7 +6,7 @@ services:
     github:
       branch: main
       deploy_on_push: true
-      repo: your-github-user/your-repo
+      repo: aksprat/text-to-image-demo
     http_port: 3000
     instance_count: 1
     instance_size_slug: basic-xxs
